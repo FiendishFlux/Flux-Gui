@@ -1516,7 +1516,7 @@ Tab4:AddLabel("Made By:Flux#6394")
 
 game.Players.LocalPlayer.Character.ArmAngleChange:FireServer(CFrame.new(1, .56, 0, 0, .01, .1, 0, 0, 0, 0, 0, 1))
 game.Players.LocalPlayer.Character.HeadWaist:FireServer(CFrame.new(0, 0.800000012, 0.0500000007, 1, 0, 0, 0, 0, 0, 0, 0, 0),CFrame.new(0, 0.0949999988, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1))
-    elseif message == "neigh is for meow meowwwww" then
+    elseif message == "wow encrypted lol lol" then
         --arm gui--
 local player = game.Players.LocalPlayer
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/tfxki36U')))()
