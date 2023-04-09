@@ -1,5 +1,6 @@
 local player = game.Players.LocalPlayer
 local armAngleChange = player.Character.ArmAngleChange
+player.Character.ArmAngle.Disabled = true
 
 local amplitude = 30
 local frequency = 1 * math.pi / 5
