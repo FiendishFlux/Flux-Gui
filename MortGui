@@ -196,36 +196,7 @@ Tab1:AddTextbox({
 
 
 
-Tab1:AddLabel("Grab Anywhere")
 
-
-Tab1:AddButton({
-	Name = "Activate",
-	Callback = function()
-local plrs = game:GetService'Players'
-local plr = plrs.LocalPlayer
-local mouse = plr:GetMouse()
-
-mouse.KeyDown:Connect(function(key)
-    if key == 'q' then
-        pcall(function()
-            if not plr.Character.Picked.Value then
-                plr.Character.Picking:FireServer(mouse.Target,mouse.Hit.p)
-            else
-                plr.Character.PuttingDown:FireServer()
-            end
-        end)
-    end
-end)
-mouse.KeyUp:Connect(function(key)
-    if key == 'q' then
-        pcall(function()
-            plr.Character.PuttingDown:FireServer()
-        end)
-    end
-end)
-end
-})
 
 
 
