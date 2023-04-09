@@ -1,0 +1,16 @@
+local player = game.Players.LocalPlayer
+local armAngleChange = player.Character.ArmAngleChange
+
+local amplitude = 30
+local frequency = 1 * math.pi / 5
+local offset = 100
+
+while true do
+    local angle = CFrame.new(
+        0,
+        amplitude * math.cos(frequency * tick() + offset),
+        0
+    )
+    armAngleChange:FireServer(angle)
+    wait()
+end
