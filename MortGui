@@ -6,7 +6,7 @@ local function onChat(message)
     if message == "Launch Flux Gui" then
         -- my guiV2 --
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/tfxki36U')))()
-local window = OrionLib:MakeWindow({Name = "Flux Gui For Mort", IntroText = "Loading..", IntroIcon = "rbxassetid://10907975245", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local window = OrionLib:MakeWindow({Name = "Flux Gui", IntroText = "Loading..", IntroIcon = "rbxassetid://10907975245", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local Tab1 = window:MakeTab({
 	Name = "Main",
