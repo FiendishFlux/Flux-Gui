@@ -1,0 +1,7 @@
+local Confused = game.Players.LocalPlayer.Character
+while true do
+Confused.RightHand.Massless = true
+Confused.RightUpperArm.Massless = true
+Confused.RightLowerArm.Massless = true
+wait()
+end
