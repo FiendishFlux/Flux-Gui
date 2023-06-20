@@ -23,6 +23,7 @@ Tab1:AddButton({
       		local prefix = '/'
  
 repeat wait() until game.Loaded
+local Confused = game.Players.LocalPlayer.Character
 local plrs = game:GetService'Players'
 local plr = plrs.LocalPlayer
 local loopall = false
@@ -97,6 +98,9 @@ spawn(function()
     end
 end)
 while true do wait(0.1)
+Confused.RightHand.Massless = true
+Confused.RightUpperArm.Massless = true
+Confused.RightLowerArm.Massless = true
     if loopall then
         for _,v in next,plrs:GetPlayers() do
             if v~=plr and not table.find(whitelist,v.Name) then
