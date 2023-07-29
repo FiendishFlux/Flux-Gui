@@ -1,0 +1,44 @@
+local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
+local rs = game:GetService'RunService'
+local vim = game:GetService'VirtualInputManager'
+
+pcall(function()
+    local b = plr.PlayerGui.DeathMenu.Frame.Button.TextButton
+    b.Parent = plr.PlayerGui.DeathMenu
+    b.Size = UDim2.new(0.1,0,0.05,0)
+    b.Position = UDim2.new(0.1,0,0,0)
+    b.TextScaled = true
+end)
+
+plr.CharacterAdded:Connect(function()
+    repeat rs.RenderStepped:wait() until plr:FindFirstChild'PlayerGui' and plr.PlayerGui:FindFirstChild'DeathMenu' and plr.PlayerGui.DeathMenu:FindFirstChild'Frame' and plr.PlayerGui.DeathMenu.Frame:FindFirstChild'Button' and plr.PlayerGui.DeathMenu.Frame.Button:FindFirstChild'TextButton'
+    local b = plr.PlayerGui.DeathMenu.Frame.Button.TextButton
+    b.Parent = plr.PlayerGui.DeathMenu
+    b.Size = UDim2.new(0.1,0,0.05,0)
+    b.Position = UDim2.new(0.1,0,0,0)
+    b.TextScaled = true
+end)
+
+plr.CharacterAdded:Connect(function()
+    local c = 0
+    repeat 
+        rs.RenderStepped:wait()
+        c=c+1
+    until plr.Character and plr.Character:FindFirstChild'HumanoidRootPart' and plr.Character:FindFirstChild'RightHand' and plr:FindFirstChild'Backpack' and plr.Backpack:FindFirstChild'Punch' and plr:FindFirstChild'PlayerGui' and plr.PlayerGui:FindFirstChild'DeathMenu' and plr.PlayerGui.DeathMenu:FindFirstChild'TextButton' or c>=200
+    local obj = plr.PlayerGui.DeathMenu.TextButton
+    if c>=200 then
+        vim:SendMouseButtonEvent(obj.AbsolutePosition.X+50,obj.AbsolutePosition.Y+50,0,true,game,0)
+        vim:SendMouseButtonEvent(obj.AbsolutePosition.X+50,obj.AbsolutePosition.Y+50,0,false,game,0)
+    else
+        pcall(function()
+            plr.Backpack.Punch.Parent = plr.Character
+            plr.Character.Punch:Activate()
+            firetouchinterest(game.Players.LocalPlayer.Character.RightHand,game.Players.xMarsBax.Character.HumanoidRootPart,0)
+            firetouchinterest(game.Players.LocalPlayer.Character.RightHand,game.Players.xMarsBax.Character.HumanoidRootPart,1)
+            wait()
+            vim:SendMouseButtonEvent(obj.AbsolutePosition.X+50,obj.AbsolutePosition.Y+50,0,true,game,0)
+            vim:SendMouseButtonEvent(obj.AbsolutePosition.X+50,obj.AbsolutePosition.Y+50,0,false,game,0)
+        end)
+    end
+end)
